@@ -15,8 +15,6 @@ class MonsterSpooder(scrapy.Spider):
         self.logger.info('Getting item from Monster.se')
         list_of_jobs = response.xpath("//*[@id='SearchResults']")
 
-        print(list_of_jobs)
-
         for item in list_of_jobs:
             for i in range(1, 31):
                 if item.xpath(f".//section[{i}]/div/div[2]/header/h2/a/text()").get() is not None:
