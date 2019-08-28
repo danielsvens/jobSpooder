@@ -25,5 +25,7 @@ class MonsterSpooder(scrapy.Spider):
                         title=item.xpath(f".//section[{i}]/div/div[2]/header/h2/a/text()").get(),
                         city=item.xpath(f".//section[{i}]/div/div[2]/div[2]/a/text()").get(),
                         created=item.xpath(f".//section[{i}]/div/div[3]/time/text()").get(),
-                        href=item.xpath(f".//section[{i}]/div/div[2]/header/h2/a/@href").get()
+                        href=item.xpath(f".//section[{i}]/div/div[2]/header/h2/a/@href").get(),
+                        description='',
+                        days_left='',
                     )
